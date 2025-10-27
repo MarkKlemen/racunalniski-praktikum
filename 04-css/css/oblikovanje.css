@@ -39,8 +39,7 @@ h1 {
 h2 {
     margin-top: 2em;
     border: 1px;
-    color: #AAAAAA;
-    style: solid;
+    color: #AAAAAA solid;
     padding: 0.5em
 }
 
