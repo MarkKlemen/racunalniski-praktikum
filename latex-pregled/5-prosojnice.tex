@@ -118,6 +118,79 @@
 
 \end{frame}
 
+\begin{frame}
 
+\begin{alertblock}{Opozorilo}To je alert block.\end{alertblock}
+\pause
+\begin{exampleblock}{Primer}To je example block. \end{exampleblock}
+\pause
+\begin{block}{Odkrivanje}
+\begin{itemize}[<+->]
+\item Bla bla
+\item Ble ble
+\item Bli bli
+\item Blo blo
+\item Blu blu
+\end{itemize}
+\end{block}
+
+\note[item]<1>{To je za postopno odkrivanje vsebine.}
+
+\end{frame}
+
+\begin{frame}{Se drugo odkrivanje}
+\begin{block}{Odkrivanje po overlay-ih}
+\begin{itemize}
+\item<2> Bla bla       % pokaže se le na overlay 2
+\item<3,5> Ble ble     % pokaže se samo na overlay 3 in 5
+\item<4-> Bli bli      % pokaže se od overlay 4 naprej
+\item<6> Blo blo       % samo overlay 6
+\item<7-> Blu blu      % overlay 7 naprej
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{onslide primer} %onslide ohrani prostor za vsebino
+
+\onslide<1->{To besedilo je vedno na istem mestu.}
+
+\onslide<2->{\begin{block}{Drugi korak}
+To se pojavi na drugem overlay-u.
+\end{block}}
+
+\onslide<3->{Tretji korak.}
+
+\end{frame}
+\bigbreak
+
+\begin{frame}{only primer} %\onslide ne ohrani prostora za vso vsebino
+
+\only<1>{Prva verzija besedila.} %ta na sredini
+
+\only<2>{Druga verzija besedila.} %ta na sredini
+
+\only<3>{Tretja verzija besedila.} %...
+
+\end{frame}
+
+\begin{frame}{Stolpci in overlay-i}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+\begin{itemize}[<+->]
+\item Prvi
+\item Drugi
+\item Tretji
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\onslide<2->{To se pojavi šele na drugem overlay-u.}
+\end{column}
+
+\end{columns}
+
+\end{frame}
 
 \end{document}

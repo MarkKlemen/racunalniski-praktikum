@@ -1,0 +1,53 @@
+h1 {background-color: rgb(123, 219, 123);
+}
+.roza {
+    color: pink
+}
+
+#fontitalic {font-style: italic;}
+
+* {margin: 2px; padding: 2px;} /*to je za celotno besedilo*/
+
+div p {margin:8px; background-color: red;}
+
+h1, h2 {text-overflow: clip; font-size: xx-large;}
+
+div.modro {color:blue}
+
+ul li:last-child {
+    font-weight: bold;
+}
+
+ol li:nth-child(odd){
+    background-color: #978989;
+}
+
+ol li:nth-child(even){
+    background-color: #ebd870;
+}
+
+a:hover{
+    color:green
+}
+
+th{
+    background-color:aqua
+}
+
+tr:nth-child(odd){
+    background-color: #978989;
+}
+
+tr:nth-child(even){
+    background-color: #ebd870;
+}
+
+a[href]{background-color:yellow;}
+
+input[type="text"]{
+    background-color:antiquewhite
+}
+
+input[type="password"]{
+    background-color:aquamarine
+}

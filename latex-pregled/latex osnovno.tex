@@ -1,0 +1,178 @@
+\documentclass[a4paper,10pt]{article}
+% ali \documentclass{beamer}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} %prvi trije nujni za slovenščino
+\usepackage{amsmath} %poravnane enačbe, matrike ipd.
+\usepackage{amsthm} %definicije, trditve
+\usepackage{amssymb} %matematični simboli
+\usepackage{graphicx} %slike(\inlcudegraphics)
+\usepackage{booktabs} %lepe tabele
+\usepackage{tikz} %slike/grafi
+\usepackage{pgfplots} %grafi
+\usepackage{blindtext} %za blind text (ni pomembno)
+\usepackage{hyperref} %povezave (naj bo zadnji)
+
+\newcommand{\R}{\mathbb{R}}
+
+
+
+% Definicija okolij izrek, posledica
+{\theoremstyle{plain}
+\newtheorem{izrek}{Izrek}[section]
+\newtheorem{posledica}[izrek]{Posledica}
+}
+
+% Definicija okoli za definicije in vaje
+{\theoremstyle{definition}
+\newtheorem{definicija}[izrek]{Definicija}
+\newtheorem{vaja}[izrek]{Vaja}
+}
+
+%Lahko tudi samo tako:
+%\theoremstyle{definition}
+%\newtheorem{definicija}{Definicija}
+
+%\theoremstyle{plain}
+%\newtheorem{trditev}{Trditev}
+
+\title{Naslov}
+\author{Ime}
+\date{\today} %oziroma ce noces datuma: \date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Uporabljamo za povzetek.
+\end{abstract}
+
+\tableofcontents %za seznam poglavij
+
+\section{
+    To je prvo poglavje
+}
+\blindtext
+\subsection{
+    To je podpoglavje prvega poglavja
+}
+\blindtext
+
+%\input{...} za dodajanje datotek
+
+\emph{poudarjevo}, \textbf{krepko}, \textit{poševno}, \texttt{pisava za kodo},
+ \verb|\maketitle|, %za prikaz kode
+  \url{https://youtube.com}, \noindent, 
+  \centering Blabla
+ \begin{verbatim}            dobesedno besedilo      sdsdsdsd
+ \end{verbatim}
+
+\begin{itemize}
+  \item Prvi
+  \item Drugi
+\end{itemize}
+
+\begin{enumerate}
+  \item Ena
+  \item Dva
+\end{enumerate}
+
+\begin{table}[h]
+\centering
+\caption{Primer tabele}
+\label{tab:rezultati}
+\begin{tabular}{lcr}
+\toprule
+\textbf{Ime} & \textbf{Točke} & \textbf{Ocena} \\
+\midrule
+Ana   & 92 & 10 \\
+Boris & 78 & 8  \\
+Cene  & 64 & 7  \\
+\midrule
+\multicolumn{3}{c}{Povprečje: 78} \\
+\bottomrule
+\end{tabular}
+\end{table} %ta nima navpicnih crt
+
+
+\begin{table}[ht]
+\centering
+\caption{Rezultati izpita pri predmetu Računalniški praktikum}
+\label{tab:izpit}
+\begin{tabular}{|l|c|c|c|r|} %|za navpicne crte
+\hline
+\textbf{Ime} & \textbf{Vpisna št.} & \textbf{Naloga 1} & \textbf{Naloga 2} & \textbf{Skupaj} \\
+\hline
+Ana Novak   & 631201 & 18 & 20 & 38 \\ %\\za prelom vrstice
+Boris Kranj & 631202 & 15 & 17 & 32 \\
+Cene Horvat & 631203 & 12 & 14 & 26 \\
+\hline %za vodoravno crto
+\multicolumn{2}{|c|}{\textbf{Povprečje}} & \multicolumn{2}{c|}{16} & 32 \\
+\hline %\multicolumn za zdruzevanje stolpcevS
+\end{tabular}
+\end{table}
+
+
+\begin{figure}[h] %[h] za here, %[t] za top, [b] za bottom, [p] za posebno stran za slike
+\centering
+\caption{muca}
+\label{muca}
+\includegraphics[width=0.5\textwidth]{muca.jpg}
+\end{figure}
+
+Zdaj pride pikazni način.
+\[d\sin(ax)+b=c\] %prikazni nacin
+\break
+Ce se hoces sklicati na enacbo:
+\begin{equation}\label{eq:pitagora}
+    a^2 + b^2 = c^2
+\end{equation}
+Ali pa ce se hoces sklicati na enacbo ki nima stevilke zraven:
+\begin{equation*}\label{eq:euler}
+    e^{i\pi}+1=0
+\end{equation*}
+Potem pa še vrstični način.
+$\frac{3x}{2y}-\sqrt{xy}=e^{2i}$ %vrsticni nacin
+
+To: $\lim_{a \to x}{\ln{a}}$ je limita.
+
+Se vsota:
+\[\sum_{i=0}^{\infty}{\binom{i+2}{i}}\]
+
+Se integral:
+\[\int_{-\pi}^{\pi}{\cos^2(x)}dx\]
+
+$ \begin{bmatrix}
+\ddots & a_2 & a_3 & a_4 & a_5 & a_6 \\
+b_1 & \ddots & b_3 & \ldots & \ddots & b_6 \\
+c_1 & c_2 & 1 & 1 & \cdots & \ddots \\
+d_1 & d_2 & d_3 & \vdots & d_5 & d_6 \\
+e_1 & e_2 & e_3 & e_4 & e_5 & e_6 \\
+f_1 & f_2 & f_3 & f_4 & f_5 & f_6 
+\end{bmatrix}  $
+
+\begin{multline*} %za enacbe daljse kot je sirina strani
+p(x) = 3x^6 + 14x^5y + 590x^4y^2 + 19x^3y^3\\ 
+- 12x^2y^4 - 12xy^5 + 2y^6 - a^3b^3
+\end{multline*}
+
+\begin{align*} %za poravnavo enacbo (&)
+2x - 5y &=  8 \\ 
+3x + 9y &=  -12
+\end{align*}
+
+Zdaj pa sklicevanje... \bigbreak %prehod v novo vrstico
+Poglej sliko \ref{muca}
+\bigbreak
+Poglej tabelo \ref{tab:rezultati}
+\bigbreak
+Poglej enačbo \eqref{eq:pitagora}
+\bigbreak
+Poglej enačbo \eqref{eq:euler}
+\bigbreak
+Poglej stran \pageref{eq:pitagora}
+\bigbreak
+%\cite{vir} za citiranje ko imas bibliografijo
+%\nocite{vir} ce citiras nekoga v bibliografiji ampak ga ne omenis v besedilu
+%\bibliograpfystyle{plain}
+%\bibliography{vir} za datoteko z bibliografijo
+\end{document}
